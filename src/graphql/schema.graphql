@@ -1,0 +1,43 @@
+type Weather  {
+    weather: Summary
+    country: String
+}
+
+type Summary {
+    title: String
+    description:String
+    icon: String
+}
+
+type Temperature {
+    actual: String
+    feelsLike: Float
+    min: Float
+    max: Float
+}
+
+type Wind {
+    speed: Float
+    deg: Float
+}
+
+type Clouds{
+    all: String
+}
+
+type Common {
+    summary: Summary
+    temperature: Temperature
+    wind: Wind
+    clouds: Clouds
+}
+
+type General {
+    name: String
+    country: String
+    weather:Common
+}
+
+type Query {
+    getCityByName(name: String): General
+}
